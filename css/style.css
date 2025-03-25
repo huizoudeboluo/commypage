@@ -55,6 +55,133 @@ body {
 }
 
 /* 首页banner样式 */
+/* 基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Banner样式 */
+.bridge-banner {
+    background-image: url('/Users/xiliu/Documents/commypage/images/bridge.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 600px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.bridge-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.bridge-banner {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+}
+
+/* Banner文字动画 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bridge-banner h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    animation: fadeInUp 1s ease-out;
+}
+
+.bridge-banner p {
+    font-size: 24px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease-out 0.5s;
+    animation-fill-mode: both;
+}
+
+/* Banner图片动画 */
+.banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: zoomIn 5s ease-out forwards; /* 从20s改为10s */
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* 降低遮罩层透明度 */
+    z-index: 1;
+}
+
+.bridge-banner .container {
+    position: relative;
+    z-index: 2;  /* 确保文字在遮罩层之上 */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.bridge-banner h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+.bridge-banner p {
+    font-size: 24px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
 .hero {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1920x1080');
     background-size: cover;
@@ -90,26 +217,48 @@ body {
     gap: 30px;
 }
 
+/* 产品卡片样式 */
 .product-card {
     background: #fff;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .product-card img {
     width: 100%;
-    height: auto;
+    height: 200px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
 }
 
 .product-card h3 {
-    padding: 20px;
+    padding: 20px 20px 10px;
     margin: 0;
+    font-size: 20px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.product-card:hover h3 {
+    color: #007bff;
 }
 
 .product-card p {
     padding: 0 20px 20px;
     color: #666;
+    line-height: 1.6;
 }
 
 /* 服务支持样式 */
@@ -124,6 +273,31 @@ body {
     padding: 30px;
     background: #f8f9fa;
     border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    background: #fff;
+}
+
+.service-item h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 22px;
+    transition: color 0.3s ease;
+}
+
+.service-item:hover h3 {
+    color: #007bff;
+}
+
+.service-item p {
+    color: #666;
+    line-height: 1.6;
 }
 
 /* 联系我们样式 */
