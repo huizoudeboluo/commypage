@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Microsoft YaHei', sans-serif;
-    line-height: 1.2;
+    line-height: 1.6;
 }
 
 .container {
@@ -183,7 +183,7 @@ body {
 }
 
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/Users/xiliu/Documents/commypage/images/bridge.jpg');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1920x1080');
     background-size: cover;
     background-position: center;
     height: 100vh;
