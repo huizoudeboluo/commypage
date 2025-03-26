@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Microsoft YaHei', sans-serif;
-    line-height: 1.6;
+    line-height: 1.2;
 }
 
 .container {
@@ -183,7 +183,7 @@ body {
 }
 
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1920x1080');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/Users/xiliu/Documents/commypage/images/bridge.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -201,6 +201,11 @@ body {
 /* 通用区块样式 */
 .section {
     padding: 80px 0;
+}
+
+/* 产品介绍部分特别调整 */
+#products {
+    padding-top: 40px;  /* 减小与上方关于我们的间距 */
 }
 
 .section-title {
@@ -327,4 +332,9 @@ body {
     .section {
         padding: 40px 0;
     }
+}
+
+/* 服务支持部分特别调整 */
+#services {
+    padding-top: 40px;  /* 减小与上方关于我们的间距 */
 }
